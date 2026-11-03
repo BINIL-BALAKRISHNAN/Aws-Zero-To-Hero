@@ -1,0 +1,127 @@
+# AWS Cloud Computing Models
+
+> A quick, practical guide to **deployment models** and **service models**, with AWS examples.
+
+## Contents
+
+- [Two ways to classify cloud computing](#two-ways-to-classify-cloud-computing)
+- [Deployment models](#1-deployment-models)
+- [Service models](#2-service-models)
+- [Putting the models together](#putting-the-models-together)
+- [Quick revision](#quick-revision)
+
+## Two ways to classify cloud computing
+
+| Classification | The question it answers |
+|---|---|
+| **Deployment model** | Where does the cloud environment run, and who uses it? |
+| **Service model** | What does the cloud provider manage, and what do you manage? |
+
+These are different classifications. For example, an application can use a **public cloud deployment** and include both **IaaS** and managed platform services.
+
+## 1. Deployment models
+
+### ☁️ Public cloud
+
+Cloud services are delivered by a provider over the internet. The provider's infrastructure serves many customers, while each customer's resources and data are logically separated.
+
+**AWS example:** Amazon EC2 virtual servers or Amazon S3 object storage.
+
+**Scenario:** A business hosts its website on AWS instead of buying and maintaining physical servers.
+
+### 🔒 Private cloud
+
+A private cloud environment is dedicated to one organization. It can run in the organization's own data center or on dedicated infrastructure.
+
+**AWS note:** An **Amazon VPC** is a logically isolated network within AWS. A VPC is useful for building a private network, but a VPC by itself is not a complete private cloud.
+
+**Scenario:** A company places application servers and a database in private network subnets so they are not directly reachable from the public internet.
+
+### 🔗 Hybrid cloud
+
+A hybrid cloud connects a private environment—often an on-premises data center—with a public cloud such as AWS.
+
+**AWS examples:** AWS Direct Connect or a site-to-site VPN can connect a company network to an AWS VPC.
+
+**Scenario:** A company keeps a database in its own data center while running its website in AWS.
+
+### 🌐 Multicloud
+
+Multicloud means using services from **two or more cloud providers**.
+
+**Example:** A company runs one workload on AWS and another on Microsoft Azure or Google Cloud.
+
+**Remember:** Using several AWS services is still using one cloud provider; that alone is not multicloud.
+
+### Deployment model summary
+
+| Model | In simple terms | Example |
+|---|---|---|
+| **Public cloud** | Provider's cloud serves multiple customers | A website hosted on AWS |
+| **Private cloud** | Cloud environment dedicated to one organization | An organization's dedicated private environment |
+| **Hybrid cloud** | Private environment connected to public cloud | On-premises database connected to AWS |
+| **Multicloud** | Two or more cloud providers are used | AWS and Azure used by one company |
+
+## 2. Service models
+
+The service models form a spectrum: **IaaS gives you more control and responsibility; SaaS gives you a ready-to-use application.**
+
+### IaaS — Infrastructure as a Service
+
+The provider supplies basic computing resources such as virtual servers, storage, and networking. You manage more of the software, including the operating system and your application.
+
+**AWS example:** **Amazon EC2** provides virtual servers. You choose an operating system, install software, and manage your application.
+
+**Scenario:** Launch an EC2 instance, install a web server, and deploy your website.
+
+### PaaS — Platform as a Service
+
+The provider manages more of the infrastructure and application platform. You focus mainly on deploying and maintaining your application.
+
+**AWS example:** **AWS Elastic Beanstalk** helps deploy an application and provisions and manages much of its environment.
+
+**Scenario:** Upload your web application to Elastic Beanstalk and let it help set up the environment that runs it.
+
+### SaaS — Software as a Service
+
+The provider runs a complete application. You access and configure the software without managing its servers or operating system.
+
+**Example:** **Salesforce** is a SaaS application. Web-based email is another familiar example of SaaS.
+
+**Scenario:** Sign in to an online application through a browser; the provider operates and maintains it.
+
+### Service model summary
+
+| Model | Provider manages | You mainly manage | Example |
+|---|---|---|---|
+| **IaaS** | Physical infrastructure and virtualization | Operating system, application, and data | Amazon EC2 |
+| **PaaS** | Infrastructure and much of the application platform | Your application and its data | AWS Elastic Beanstalk |
+| **SaaS** | The complete application and its infrastructure | How you use and configure the application | Salesforce |
+
+## Putting the models together
+
+Imagine an online shop:
+
+1. It uses a **public cloud deployment** because it runs in AWS.
+2. It may use **EC2 (IaaS)** for an application server where the team manages the operating system.
+3. It may use **RDS**, a managed database service, so AWS handles much of the database infrastructure.
+4. It may use a **SaaS** tool from a provider to manage customer support.
+
+One application can therefore involve multiple AWS services and different levels of management.
+
+## Quick revision
+
+- **Deployment model** = where the environment runs and who uses it.
+- **Service model** = how responsibilities are divided between provider and customer.
+- **Public cloud** = provider's cloud infrastructure serves multiple customers.
+- **Private cloud** = environment dedicated to one organization.
+- **Hybrid cloud** = private environment connected to public cloud.
+- **Multicloud** = services from multiple cloud providers.
+- **IaaS** = rent infrastructure; manage more of the software stack.
+- **PaaS** = deploy your application on a managed platform.
+- **SaaS** = use a finished application managed by its provider.
+
+## References
+
+- [AWS: Types of cloud computing](https://aws.amazon.com/types-of-cloud-computing/)
+- [AWS: Overview of Amazon Web Services](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/)
